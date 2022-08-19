@@ -42,7 +42,7 @@ public class OAuthServiceCreator {
 	@Facebook
 	public OAuthService getInstanceFacebook() {
 		this.service = new ServiceBuilder()
-		.provider(FacebookApi.class)
+		.provider(FacebookCustomApi.class)
 		.apiKey(env.get(FACEBOOK_CLIENT_ID))
 		.apiSecret(env.get(FACEBOOK_APP_SECRET))
 				.callback(env.get("host")+env.get(FACEBOOK_REDIRECT_URI))
@@ -54,7 +54,7 @@ public class OAuthServiceCreator {
 	@Google
 	public OAuthService getInstanceGoogle() {
 		this.service = new ServiceBuilder()
-		.provider(Google2Api.class)
+		.provider(GoogleCustomApi.class)
 		.apiKey(env.get(GOOGLE_CLIENT_ID))
 		.apiSecret(env.get(GOOGLE_CLIENT_SECRET))
 		.callback(env.get("host")+env.get(GOOGLE_REDIRECT_URI))
